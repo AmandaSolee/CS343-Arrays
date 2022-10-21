@@ -56,6 +56,15 @@ const data = {
       desc: "Introduction to the operation of modern interrupt-driven computer systems. Explores the representation of software and information in binary memory, the primary components of a CPU, multithreaded programming and basic interactions with an Operating System. You may only enroll in CS 261 at most twice.",
       prereqs: [227],
       credits: 3,
+    },
+    {
+      prefix: "CS",
+      number: 327,
+      title: "Discrete Structures II",
+      url: "https://catalog.jmu.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=50&expand=&navoid=2576&search_database=Filter#acalog_template_course_filter",
+      desc: "This course builds on the theoretical foundation developed in Discrete Structures I. Students study a range of topics from discrete mathematics and theoretical computer science including elementary number theory, matrices, graph theory, automata, computability and complexity theory.",
+      prereqs: [227, 240],
+      credits: 3,
     }
   ],
 };
