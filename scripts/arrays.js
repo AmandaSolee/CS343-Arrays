@@ -26,10 +26,10 @@ const courseToCard = ({
   return courseTemplate;
 };
 
+const resultsContainer = document.querySelector("#filtered-results");
 const courseCards = data.items.map(courseToCard);
-courseCards.forEach((c) => document.write(c));
-// console.log(courseCards);
-// document.write(courseCards.join(''))
+resultsContainer.innerHTML = courseCards.join("");
+
 
 // 2. maybe we only show those that match the search query?
 // 
@@ -43,7 +43,6 @@ const searchButton = document.getElementById("search-btn")
 searchButton.addEventListener("click", (ev) => {
     console.log(ev)
     ev.preventDefault();
-    // ev.stopPropagation();
     console.log("query text")
     const searchField = document.querySelector('input[name="query-text"]');
     const queryText = searchField.value;
@@ -53,12 +52,26 @@ searchButton.addEventListener("click", (ev) => {
         filterCourseCard(card, queryText)
     );
 
+
+
     console.log('filteredCourseCards', filteredCourseCards);
-    filteredCourseCards.forEach((card) => {
-        document.write(card);
-    });
+    resultsContainer.innerHTML  = filteredCourseCards.join("");
+    updateCount(filteredCourseCards);
+    console.log(filteredCourseCards);
 });
 
 
 // 3. we update the result count and related summary info as we filter
+
+function updateCount(cards) {
+  const count = document.getElementById("result-count");
+  const countValue = cards.length;
+  count.innerText = `${countValue} items`;
+  const cost = document.getElementById("result-cost");
+  const costValue = countValue * 3;
+  cost.innerText = `${costValue}`;
+}
+
+updateCount(courseCards);
+
 
